@@ -35,4 +35,9 @@ public class EmployeeController {
 	public List<Employee> getEmployee(){
 		return employeeRepository.findAll();
 	}
+	
+	@GetMapping("/message")
+	public String test() {
+		return "Congrats Azure app service runs";
+	}
 }
