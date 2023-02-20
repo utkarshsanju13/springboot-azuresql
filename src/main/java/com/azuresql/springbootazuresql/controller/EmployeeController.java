@@ -12,8 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.azuresql.springbootazuresql.entity.Employee;
 import com.azuresql.springbootazuresql.repository.EmployeeRepository;
 
-
-
 @RestController
 //@RequestMapping("/")
 public class EmployeeController {
@@ -23,7 +21,14 @@ public class EmployeeController {
 	
 	@PostMapping("/employee")
 	public Employee addEmployee(@RequestBody Employee employee) {
-		return employeeRepository.save(employee);
+		Employee emp = null;
+		try {
+			 emp = employeeRepository.save(employee);
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return emp ;
 	}
 
 	@GetMapping("/emplyees")
