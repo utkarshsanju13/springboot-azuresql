@@ -12,9 +12,9 @@ import lombok.NoArgsConstructor;
 
 
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
-@Table
+//@NoArgsConstructor
+//@AllArgsConstructor
+@Table(name = "employee")
 @Entity
 public class Employee {
 	
@@ -24,5 +24,16 @@ public class Employee {
 	private String name;
 	private String dept;
 	private int salary;
+	public Employee(int id, String name, String dept, int salary) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.dept = dept;
+		this.salary = salary;
+	}
+	
+	public Employee() {
+		
+	}
 	
 }
