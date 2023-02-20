@@ -38,6 +38,6 @@ public class EmployeeController {
 	
 	@GetMapping("/message")
 	public String test() {
-		return "Congrats Azure app service runs";
+		return "Congrats Azure app service runs perfect";
 	}
 }
