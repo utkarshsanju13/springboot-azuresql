@@ -1,53 +1,104 @@
-# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
-# More GitHub Actions for Azure: https://github.com/Azure/actions
+Screen Shots:
+Task1: Create a virtual network with 2 subnets. Each subnet should have 16 Ips only.
+Creating Virtual Network: (Details) (cncreation1)
+![alt text](https://github.com/utkarshsanju13/springboot-azuresql/blob/main/img/cncreation1.png)
 
-name: Build and deploy JAR app to Azure Web App - springazuredemo2
+ 
+2 subnet creation of 16Ips only: (vncreation2-2subnet16ipscreated)
+ 
 
-on:
-  push:
-    branches:
-      - main
-  workflow_dispatch:
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
 
-    steps:
-      - uses: actions/checkout@v2
 
-      - name: Set up Java version
-        uses: actions/setup-java@v1
-        with:
-          java-version: '11'
+Virtual Network (review & create)(vncreation3-reviewandcreate)
+ 
+Virtual Network successfully deployed:( vnetcreation4-createdsuccesfully)
+ 
 
-      - name: Build with Maven
-        run: mvn clean install
 
-      - name: Upload artifact for deployment job
-        uses: actions/upload-artifact@v2
-        with:
-          name: java-app
-          path: '${{ github.workspace }}/target/*.jar'
 
-  deploy:
-    runs-on: ubuntu-latest
-    needs: build
-    environment:
-      name: 'production'
-      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
-    
-    steps:
-      - name: Download artifact from build job
-        uses: actions/download-artifact@v2
-        with:
-          name: java-app
 
-      - name: Deploy to Azure Web App
-        id: deploy-to-webapp
-        uses: azure/webapps-deploy@v2
-        with:
-          app-name: 'springazuredemo2'
-          slot-name: 'production'
-          publish-profile: ${{ secrets.AzureAppService_PublishProfile_cf46fbb68a604e509aac6fa798ceaef3 }}
-          package: '*.jar'
+
+
+Task 2: Inside one of the subnets, create a VM and deploy an application code inside it and it should leverage the database on the cloud (any existing application created by you before)
+Creating Virtual Machine: (vmcreation1Screenshot 2023-02-21 140620)
+ 
+(vmcreatin2)
+ 
+Setting up the admin account of virtual machine:( vmcreatin3)
+ 
+Successfully deployed virtual machine:(vmcreatin4-successful)
+ 
+
+Creating azure mysql Database:
+Overview : (db-created-overview)
+ 
+Setting server firewall of DB: (db-set-firewall)
+ 
+
+Database schema: (db-table)
+ 
+
+Connecting springBoot project to azure mySql: (application.yml-springboot-azuresql)
+ 
+Connected to Virtual Machine via Putty: (sucessfully-login-vm)
+
+ 
+
+Successful Deployment and running application Log on VM: (sucessfully-deploy-on-VM)
+ 
+
+Task3: Deploy the same application to Azure App Service. It should also leverage the database on the cloud
+Created App Service: (createApp)
+ 
+Configuring Github repo to app Service: (createApp-githubaction)
+ 
+App-service deployed successfully : (service-ccreated-succesfully)
+ 
+Overview of App-service: (overviewpage)
+ 
+Github action Build and deploy on app-service: (github-build-and-deploy-success)
+ 
+Service running on provide app service URL:(url-output)
+ 
+Task4: Create the AKS cluster (2 nodes, smallest size VM) and deploy any two services on it. Services should be accessible from the internet.
+Creating AKS: (create kubernetes cluster)
+ 
+Creating 2 node in AKS: (create kubernetes cluster2)
+ 
+AKS Newtworking: (create kubernetes cluster3)
+ 
+AKS review & create: (create kubernetes cluster4)
+ 
+AKS deployed successfully: (clustercreatesuccess5)
+ 
+Service created and pods are running: (with runnung single pod)
+ 
+
+Task4: Create an Azure function that should trigger as soon as you upload a file in the blob storage. Function should be able to print the name of the file uploaded in the function.
+Creating Storage account: (storagecreated1)
+ 
+Storage account review & create: (storagecreated1.5)
+ 
+Storage account created successfully: (stragecreatedsuccesfully2)
+ 
+Function App creation: (functioncreating1-region-westeurope)
+ 
+Function App review and create: (functioncreating2-region-westeurope)
+ 
+Function app Successfully deployed: (functioncreatsuccesfully3)
+ 
+Creating a blob Trigger Function and mapping to Storage account: (storagemappingtoFunction)
+ 
+BlobTrigger Function created: (blobtriggercreated)
+ 
+Container creation in storage account: (containerCreatedinStorageaccount)
+ 
+File uploaded to container: (fileuploadedinContainer)
+ 
+Triggered the function: (triggering the function)
+ 
+
+Final function got triggered and Output Accepted: (finalout202Accepted)
+ 
+
