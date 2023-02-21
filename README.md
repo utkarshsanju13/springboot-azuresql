@@ -25,6 +25,8 @@ Virtual Network successfully deployed:
 
 
 Task 2: Inside one of the subnets, create a VM and deploy an application code inside it and it should leverage the database on the cloud (any existing application created by you before)
+
+
 Creating Virtual Machine: 
 ![alt text](https://github.com/utkarshsanju13/springboot-azuresql/blob/main/img/vmcreation1Screenshot%202023-02-21%20140620.png)
  
@@ -38,8 +40,7 @@ Successfully deployed virtual machine:
 ![alt text](https://github.com/utkarshsanju13/springboot-azuresql/blob/main/img/vmcreatin4-successful.png)
  
 
-Creating azure mysql Database:
-Overview : 
+azure mysql Database Overview : 
 ![alt text](https://github.com/utkarshsanju13/springboot-azuresql/blob/main/img/db-created-overview.png)
  
 Setting server firewall of DB: 
@@ -58,12 +59,15 @@ Connected to Virtual Machine via Putty:
 
  
 
-Successful Deployment and running application Log on VM: 
+Successfully Deployed and application Log on VM: 
 ![alt text](https://github.com/utkarshsanju13/springboot-azuresql/blob/main/img/sucessfully-deploy-on-VM.png)
  
 
 Task3: Deploy the same application to Azure App Service. It should also leverage the database on the cloud
+
+
 Created App Service: 
+
 ![alt text](https://github.com/utkarshsanju13/springboot-azuresql/blob/main/img/createApp.png)
  
 Configuring Github repo to app Service: 
@@ -80,8 +84,11 @@ Github action Build and deploy on app-service:
  
 Service running on provide app service URL:
 ![alt text](https://github.com/utkarshsanju13/springboot-azuresql/blob/main/img/url-output.png)
+
  
 Task4: Create the AKS cluster (2 nodes, smallest size VM) and deploy any two services on it. Services should be accessible from the internet.
+
+
 Creating AKS:
 ![alt text](https://github.com/utkarshsanju13/springboot-azuresql/blob/main/img/create%20kubernetes%20cluster.png)
  
@@ -102,6 +109,8 @@ Service created and pods are running:
  
 
 Task4: Create an Azure function that should trigger as soon as you upload a file in the blob storage. Function should be able to print the name of the file uploaded in the function.
+
+
 Creating Storage account:
 ![alt text](https://github.com/utkarshsanju13/springboot-azuresql/blob/main/img/storagecreated1.png)
  
