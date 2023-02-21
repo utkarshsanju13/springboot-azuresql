@@ -1,0 +1,4 @@
+com\azuresql\springbootazuresql\SpringbootAzuresqlApplication.class
+com\azuresql\springbootazuresql\entity\Employee.class
+com\azuresql\springbootazuresql\controller\EmployeeController.class
+com\azuresql\springbootazuresql\repository\EmployeeRepository.class

@@ -1,0 +1,14 @@
+server:
+    port: 9191
+spring:
+    datasource:
+        hibernate:
+            ddl-auto: update
+            dialect: org.hibernate.dialect.SQLServer2012Dialect
+        password: password@123
+        url: jdbc:sqlserver://spring-azuresql-server.database.windows.net:1433;database=azuresql;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;
+        username: springazuresql
+    jpa:
+        show-sql: true
+        
+        
