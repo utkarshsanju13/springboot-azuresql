@@ -13,7 +13,6 @@ import com.azuresql.springbootazuresql.entity.Employee;
 import com.azuresql.springbootazuresql.repository.EmployeeRepository;
 
 @RestController
-//@RequestMapping("/")
 public class EmployeeController {
 	
 	@Autowired
